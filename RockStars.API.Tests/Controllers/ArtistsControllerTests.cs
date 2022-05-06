@@ -25,13 +25,13 @@ namespace RockStars.API.Tests.Controllers
 
             songLibraryRepositoryMock.Setup(s => s.GetArtists()).Returns(
                 new List<Artist>()
+                {
+                    new Artist
                     {
-                        new Artist
-                            {
-                                Id = 1,
-                                Name = "Artist 1",
-                            }
+                        Id = 1,
+                        Name = "Artist 1",
                     }
+                }
             );
 
             songLibraryRepositoryMock.Setup(s => s.ArtistExists(It.IsAny<int>())).Returns(true);
